@@ -1,0 +1,246 @@
+@use "sass:map";
+@use "_default" as default;
+@use "_widget-dark" as widget-dark;
+
+.weatherWidget {
+  width: 300px;
+  background-color: default.$widget_bg;
+  border-radius: default.$widget_border_radius;
+  color: default.$widget_text;
+  font-family: default.$widget_font_face;
+  display: flex;
+  flex-direction: column;
+  box-shadow: default.$widget_shadow;
+  overflow: hidden;
+  h2,h3,h4 {
+    margin: 0;
+    font-weight: 500;
+  }
+  & &-header {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__place {
+      font-size: 2em;
+    }
+    &__reload {
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      box-shadow: none;
+      cursor: pointer;
+      width: 2.5em;
+      height: 2.5em;
+      padding: 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  & &-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    img {
+      filter: drop-shadow(0 2px 1px rgba(default.$widget_shadow_color, .5));
+    }
+    &__info {
+      align-self: stretch;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 1em;
+      &-temp {
+        font-size: 3.25em;
+        line-height: 1em;
+        font-weight: 500;
+        font-family: default.$widget_font_face_condensed;
+      }
+      &-status {
+        flex-grow: 1;
+        padding: 0 .75em;
+        line-height: 1.6em;
+      }
+      &-date {
+        padding: .5em 1em;
+        line-height: 1.1em;
+        background-color: default.$widget_date_bg;
+        color: default.$widget_date_text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: default.$widget_border_radius/2 0 0 default.$widget_border_radius/2;
+      }
+    }
+  }
+  & &-footer {
+    background-color: default.$widget_text;
+    color: default.$widget_bg;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 1em;
+    &>div {
+      display: flex;
+      align-items: center;
+      img {
+        max-height: 1.5em;
+      }
+      span {
+        margin-left: .5em;
+      }
+    }
+  }
+  &-footer__pressure {
+    background-color: default.$widget_text;
+    color: default.$widget_bg;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 1em;
+    padding-top: 0;
+    .weatherWidget-pressure__wind {
+        font-size: .9em;
+    }
+  }
+}
+
+.weatherWidget__dark {
+  width: 300px;
+  background-color: widget-dark.$widget_bg;
+  border-radius: widget-dark.$widget_border_radius;
+  color: widget-dark.$widget_text;
+  font-family: widget-dark.$widget_font_face;
+  display: flex;
+  flex-direction: column;
+  box-shadow: widget-dark.$widget_shadow;
+  overflow: hidden;
+  h2,h3,h4 {
+    margin: 0;
+    font-weight: 500;
+  }
+  .weatherWidget-header {
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .weatherWidget-header__place {
+      font-size: 2em;
+    }
+    .weatherWidget-header__reload {
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+      box-shadow: none;
+      cursor: pointer;
+      width: 2.5em;
+      height: 2.5em;
+      padding: 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .weatherWidget-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    img {
+      filter: drop-shadow(0 2px 1px rgba(widget-dark.$widget_shadow_color, .5));
+    }
+    .weatherWidget-body__info {
+      align-self: stretch;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 1em;
+      .weatherWidget-body__info-temp {
+        font-size: 3.25em;
+        line-height: 1em;
+        font-weight: 500;
+        font-family: widget-dark.$widget_font_face_condensed;
+      }
+      .weatherWidget-body__info-status {
+        flex-grow: 1;
+        padding: 0 .75em;
+        line-height: 1.6em;
+      }
+      .weatherWidget-body__info-date {
+        padding: .5em 1em;
+        line-height: 1.1em;
+        background-color: widget-dark.$widget_date_bg;
+        color: widget-dark.$widget_date_text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: widget-dark.$widget_border_radius/2 0 0 widget-dark.$widget_border_radius/2;
+      }
+    }
+  }
+  .weatherWidget-footer {
+    background-color: widget-dark.$widget_text;
+    color: widget-dark.$widget_bg;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 1em;
+    .weatherWidget-footer>div {
+      display: flex;
+      align-items: center;
+      img {
+        max-height: 1.5em;
+      }
+      span {
+        margin-left: .5em;
+      }
+    }
+  }
+  .weatherWidget-footer__pressure {
+    background-color: widget-dark.$widget_text;
+    color: widget-dark.$widget_bg;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5em 1em;
+    padding-top: 0;
+    .weatherWidget-pressure__wind {
+      font-size: .9em;
+    }
+  }
+}
+//123
+//Switch
+.switch-btn {
+  box-shadow: rgba(0, 0, 0, .9) 2px 5px 10px;
+  display: inline-block;
+  width: 72px; /* ширина */
+  height: 38px; /* высота */
+  border-radius: 19px; /* радиус скругления */
+  background: #bfbfbf; /* цвет фона */
+  z-index: 0;
+  margin: 10px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition-duration: 300ms; /* анимация */
+}
+.switch-btn::after {
+  content: "";
+  height: 32px; /* высота кнопки */
+  width: 32px; /* ширина кнопки */
+  border-radius: 17px;
+  background: #fff; /* цвет кнопки */
+  top: 3px; /* положение кнопки по вертикали относительно основы */
+  left: 3px; /* положение кнопки по горизонтали относительно основы */
+  transition-duration: 300ms; /* анимация */
+  position: absolute;
+  z-index: 1;
+}
+.switch-on {
+  background: #118c4e;
+}
+.switch-on::after {
+  left: 37px;
+}
